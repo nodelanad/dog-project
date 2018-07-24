@@ -11823,7 +11823,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="k">import</span> <span class="n">load_files</span>       
@@ -11867,6 +11867,17 @@ div#notebook {
 <div class="prompt"></div>
 
 
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>Using TensorFlow backend.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>There are 133 total dog categories.
 There are 8351 total dog images.
@@ -11893,7 +11904,7 @@ There are 836 test dog images.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -11944,7 +11955,7 @@ There are 836 test dog images.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>                
@@ -12030,7 +12041,7 @@ There are 836 test dog images.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 如果img_path路径表示的图像检测到了脸，返回&quot;True&quot; </span>
@@ -12072,7 +12083,7 @@ There are 836 test dog images.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">human_files_short</span> <span class="o">=</span> <span class="n">human_files</span><span class="p">[:</span><span class="mi">100</span><span class="p">]</span>
@@ -12088,13 +12099,13 @@ There are 836 test dog images.
     <span class="n">is_face_detected</span> <span class="o">=</span> <span class="n">face_detector</span><span class="p">(</span><span class="n">human_files_short</span><span class="p">[</span><span class="n">val</span><span class="p">])</span>
     <span class="k">if</span><span class="p">(</span><span class="n">is_face_detected</span><span class="p">):</span>
         <span class="n">human_inHumans</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> in human_files &quot;</span> <span class="o">%</span> <span class="n">human_inHumans</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> </span><span class="si">%%</span><span class="s2"> in human_files &quot;</span> <span class="o">%</span> <span class="n">human_inHumans</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dog_files_short</span><span class="p">)):</span>
     <span class="n">is_face_detected</span> <span class="o">=</span> <span class="n">face_detector</span><span class="p">(</span><span class="n">dog_files_short</span><span class="p">[</span><span class="n">val</span><span class="p">])</span>
     <span class="k">if</span><span class="p">(</span><span class="n">is_face_detected</span><span class="p">):</span>
         <span class="n">human_inDogs</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> in dog_files &quot;</span> <span class="o">%</span> <span class="n">human_inDogs</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> </span><span class="si">%%</span><span class="s2"> in dog_files &quot;</span> <span class="o">%</span> <span class="n">human_inDogs</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12111,8 +12122,8 @@ There are 836 test dog images.
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>100 in human_files 
-11 in dog_files 
+<pre>100 % in human_files 
+11 % in dog_files 
 </pre>
 </div>
 </div>
@@ -12182,7 +12193,7 @@ There are 836 test dog images.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras.applications.resnet50</span> <span class="k">import</span> <span class="n">ResNet50</span>
@@ -12220,7 +12231,7 @@ There are 836 test dog images.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras.preprocessing</span> <span class="k">import</span> <span class="n">image</span>                  
@@ -12262,7 +12273,7 @@ There are 836 test dog images.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras.applications.resnet50</span> <span class="k">import</span> <span class="n">preprocess_input</span><span class="p">,</span> <span class="n">decode_predictions</span>
@@ -12289,7 +12300,7 @@ There are 836 test dog images.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">dog_detector</span><span class="p">(</span><span class="n">img_path</span><span class="p">):</span>
@@ -12319,7 +12330,7 @@ There are 836 test dog images.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### TODO: 测试dog_detector函数在human_files_short和dog_files_short的表现</span>
@@ -12329,13 +12340,13 @@ There are 836 test dog images.
     <span class="n">is_face_detected</span> <span class="o">=</span> <span class="n">dog_detector</span><span class="p">(</span><span class="n">human_files_short</span><span class="p">[</span><span class="n">val</span><span class="p">])</span>
     <span class="k">if</span><span class="p">(</span><span class="n">is_face_detected</span><span class="p">):</span>
         <span class="n">dog_inHumans</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> in human_files_short&quot;</span> <span class="o">%</span> <span class="n">dog_inHumans</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> </span><span class="si">%%</span><span class="s2"> in human_files_short&quot;</span> <span class="o">%</span> <span class="n">dog_inHumans</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dog_files_short</span><span class="p">)):</span>
     <span class="n">is_face_detected</span> <span class="o">=</span> <span class="n">dog_detector</span><span class="p">(</span><span class="n">dog_files_short</span><span class="p">[</span><span class="n">val</span><span class="p">])</span>
     <span class="k">if</span><span class="p">(</span><span class="n">is_face_detected</span><span class="p">):</span>
         <span class="n">dog_inDogs</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> in human_files_short&quot;</span> <span class="o">%</span> <span class="n">dog_inDogs</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> </span><span class="si">%%</span><span class="s2"> in human_files_short&quot;</span> <span class="o">%</span> <span class="n">dog_inDogs</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12352,8 +12363,8 @@ There are 836 test dog images.
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0 in human_files_short
-100 in human_files_short
+<pre>0 % in human_files_short
+100 % in human_files_short
 </pre>
 </div>
 </div>
@@ -12423,7 +12434,7 @@ There are 836 test dog images.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">ImageFile</span>                            
@@ -12449,9 +12460,9 @@ There are 836 test dog images.
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>100%|██████████| 6680/6680 [01:13&lt;00:00, 91.03it/s] 
-100%|██████████| 835/835 [00:09&lt;00:00, 84.99it/s] 
-100%|██████████| 836/836 [00:09&lt;00:00, 85.12it/s] 
+<pre>100%|██████████| 6680/6680 [01:11&lt;00:00, 93.04it/s] 
+100%|██████████| 835/835 [00:08&lt;00:00, 104.17it/s]
+100%|██████████| 836/836 [00:07&lt;00:00, 104.66it/s]
 </pre>
 </div>
 </div>
@@ -12483,13 +12494,20 @@ There are 836 test dog images.
 <li>你也可以根据上图提示的步骤搭建卷积网络，那么请说明为何如上的架构能够在该问题上取得很好的表现。</li>
 </ol>
 <p><strong>回答:</strong></p>
+<ol>
+<li>我们使用三层卷积层用于特征提取，由于“relu”函数具有梯度下降快且降低梯度小时，计算相对“sigmoid”函数更加简单等特点，本次使用他作为激活函数</li>
+<li>由于卷积网络会产生大量参数，为了减少训练参数数量，增加一层池化层用于降低卷积层特征维度，因最大池变现更好一点，本次采用了最大池化</li>
+<li>为了降低过拟合的状况，在池化层之后增加了Dropout()层</li>
+<li>用Flatten层将三维数据压缩成一维数据，用于卷积层和全连接层之间的连接</li>
+<li>因为是多分类问题，所以最后一层基于"softmax"建立133种狗类的输出</li>
+</ol>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras.layers</span> <span class="k">import</span> <span class="n">Conv2D</span><span class="p">,</span> <span class="n">MaxPooling2D</span><span class="p">,</span> <span class="n">GlobalAveragePooling2D</span>
@@ -12566,7 +12584,7 @@ _________________________________________________________________
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## 编译模型</span>
@@ -12601,7 +12619,7 @@ _________________________________________________________________
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras.callbacks</span> <span class="k">import</span> <span class="n">ModelCheckpoint</span>  
@@ -12636,33 +12654,33 @@ _________________________________________________________________
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Train on 6680 samples, validate on 835 samples
 Epoch 1/5
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.8901 - acc: 0.0120Epoch 00001: val_loss improved from inf to 4.71944, saving model to saved_models/weights.best.from_scratch.hdf5
-6680/6680 [==============================] - 32s 5ms/step - loss: 4.8899 - acc: 0.0120 - val_loss: 4.7194 - val_acc: 0.0299
+6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.9118 - acc: 0.0135Epoch 00001: val_loss improved from inf to 4.68781, saving model to saved_models/weights.best.from_scratch.hdf5
+6680/6680 [==============================] - 32s 5ms/step - loss: 4.9118 - acc: 0.0135 - val_loss: 4.6878 - val_acc: 0.0407
 Epoch 2/5
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.6126 - acc: 0.0350Epoch 00002: val_loss improved from 4.71944 to 4.48427, saving model to saved_models/weights.best.from_scratch.hdf5
-6680/6680 [==============================] - 32s 5ms/step - loss: 4.6125 - acc: 0.0349 - val_loss: 4.4843 - val_acc: 0.0491
+6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.5225 - acc: 0.0488Epoch 00002: val_loss improved from 4.68781 to 4.37424, saving model to saved_models/weights.best.from_scratch.hdf5
+6680/6680 [==============================] - 31s 5ms/step - loss: 4.5225 - acc: 0.0490 - val_loss: 4.3742 - val_acc: 0.0647
 Epoch 3/5
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.2819 - acc: 0.0706Epoch 00003: val_loss improved from 4.48427 to 4.38034, saving model to saved_models/weights.best.from_scratch.hdf5
-6680/6680 [==============================] - 32s 5ms/step - loss: 4.2819 - acc: 0.0708 - val_loss: 4.3803 - val_acc: 0.0647
+6660/6680 [============================&gt;.] - ETA: 0s - loss: 4.1010 - acc: 0.0895Epoch 00003: val_loss improved from 4.37424 to 4.18244, saving model to saved_models/weights.best.from_scratch.hdf5
+6680/6680 [==============================] - 31s 5ms/step - loss: 4.1014 - acc: 0.0894 - val_loss: 4.1824 - val_acc: 0.0838
 Epoch 4/5
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 3.8059 - acc: 0.1393Epoch 00004: val_loss improved from 4.38034 to 4.25545, saving model to saved_models/weights.best.from_scratch.hdf5
-6680/6680 [==============================] - 32s 5ms/step - loss: 3.8074 - acc: 0.1392 - val_loss: 4.2554 - val_acc: 0.0766
+6660/6680 [============================&gt;.] - ETA: 0s - loss: 3.6343 - acc: 0.1604Epoch 00004: val_loss improved from 4.18244 to 4.15439, saving model to saved_models/weights.best.from_scratch.hdf5
+6680/6680 [==============================] - 31s 5ms/step - loss: 3.6346 - acc: 0.1602 - val_loss: 4.1544 - val_acc: 0.0766
 Epoch 5/5
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 3.1697 - acc: 0.2563Epoch 00005: val_loss did not improve
-6680/6680 [==============================] - 31s 5ms/step - loss: 3.1686 - acc: 0.2563 - val_loss: 4.4245 - val_acc: 0.0970
+6660/6680 [============================&gt;.] - ETA: 0s - loss: 3.0715 - acc: 0.2740Epoch 00005: val_loss did not improve
+6680/6680 [==============================] - 31s 5ms/step - loss: 3.0716 - acc: 0.2743 - val_loss: 4.1931 - val_acc: 0.0898
 </pre>
 </div>
 </div>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[44]:</div>
+<div class="prompt output_prompt">Out[16]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;keras.callbacks.History at 0x7f3d87cbb278&gt;</pre>
+<pre>&lt;keras.callbacks.History at 0x7f3cddf5eeb8&gt;</pre>
 </div>
 
 </div>
@@ -12673,7 +12691,7 @@ Epoch 5/5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## 加载具有最好验证loss的模型</span>
@@ -12697,7 +12715,7 @@ Epoch 5/5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 获取测试数据集中每一个图像所预测的狗品种的index</span>
@@ -12722,7 +12740,7 @@ Epoch 5/5
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Test accuracy: 7.0574%
+<pre>Test accuracy: 8.7321%
 </pre>
 </div>
 </div>
@@ -12752,7 +12770,7 @@ Epoch 5/5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">bottleneck_features</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/data/bottleneck_features/DogVGG16Data.npz&#39;</span><span class="p">)</span>
@@ -12777,7 +12795,7 @@ Epoch 5/5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">VGG16_model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
@@ -12822,7 +12840,7 @@ _________________________________________________________________
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## 编译模型</span>
@@ -12837,7 +12855,7 @@ _________________________________________________________________
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## 训练模型</span>
@@ -12866,78 +12884,78 @@ _________________________________________________________________
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Train on 6680 samples, validate on 835 samples
 Epoch 1/20
-6500/6680 [============================&gt;.] - ETA: 0s - loss: 12.2390 - acc: 0.1163Epoch 00001: val_loss improved from inf to 10.68123, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 320us/step - loss: 12.2159 - acc: 0.1172 - val_loss: 10.6812 - val_acc: 0.2156
+6600/6680 [============================&gt;.] - ETA: 0s - loss: 11.9314 - acc: 0.1426Epoch 00001: val_loss improved from inf to 10.39930, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 329us/step - loss: 11.9100 - acc: 0.1434 - val_loss: 10.3993 - val_acc: 0.2383
 Epoch 2/20
-6600/6680 [============================&gt;.] - ETA: 0s - loss: 10.0449 - acc: 0.2898Epoch 00002: val_loss improved from 10.68123 to 10.04509, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 243us/step - loss: 10.0226 - acc: 0.2915 - val_loss: 10.0451 - val_acc: 0.2886
+6500/6680 [============================&gt;.] - ETA: 0s - loss: 9.6791 - acc: 0.3098Epoch 00002: val_loss improved from 10.39930 to 9.64630, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 248us/step - loss: 9.6945 - acc: 0.3096 - val_loss: 9.6463 - val_acc: 0.3102
 Epoch 3/20
-6480/6680 [============================&gt;.] - ETA: 0s - loss: 9.6008 - acc: 0.3472Epoch 00003: val_loss improved from 10.04509 to 9.87010, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 238us/step - loss: 9.5902 - acc: 0.3488 - val_loss: 9.8701 - val_acc: 0.3162
+6600/6680 [============================&gt;.] - ETA: 0s - loss: 9.2661 - acc: 0.3641Epoch 00003: val_loss improved from 9.64630 to 9.41313, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 247us/step - loss: 9.2600 - acc: 0.3644 - val_loss: 9.4131 - val_acc: 0.3341
 Epoch 4/20
-6480/6680 [============================&gt;.] - ETA: 0s - loss: 9.2669 - acc: 0.3856Epoch 00004: val_loss improved from 9.87010 to 9.51292, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 239us/step - loss: 9.2555 - acc: 0.3858 - val_loss: 9.5129 - val_acc: 0.3341
+6620/6680 [============================&gt;.] - ETA: 0s - loss: 8.9575 - acc: 0.3983Epoch 00004: val_loss improved from 9.41313 to 9.12761, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 245us/step - loss: 8.9610 - acc: 0.3984 - val_loss: 9.1276 - val_acc: 0.3545
 Epoch 5/20
-6560/6680 [============================&gt;.] - ETA: 0s - loss: 9.0822 - acc: 0.4059Epoch 00005: val_loss improved from 9.51292 to 9.44567, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 252us/step - loss: 9.0810 - acc: 0.4060 - val_loss: 9.4457 - val_acc: 0.3425
+6620/6680 [============================&gt;.] - ETA: 0s - loss: 8.7228 - acc: 0.4208Epoch 00005: val_loss did not improve
+6680/6680 [==============================] - 2s 245us/step - loss: 8.7173 - acc: 0.4213 - val_loss: 9.1517 - val_acc: 0.3641
 Epoch 6/20
-6520/6680 [============================&gt;.] - ETA: 0s - loss: 8.9340 - acc: 0.4244Epoch 00006: val_loss improved from 9.44567 to 9.40245, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 255us/step - loss: 8.9395 - acc: 0.4237 - val_loss: 9.4024 - val_acc: 0.3497
+6620/6680 [============================&gt;.] - ETA: 0s - loss: 8.6017 - acc: 0.4343Epoch 00006: val_loss improved from 9.12761 to 9.07454, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 244us/step - loss: 8.5986 - acc: 0.4347 - val_loss: 9.0745 - val_acc: 0.3784
 Epoch 7/20
-6460/6680 [============================&gt;.] - ETA: 0s - loss: 8.8760 - acc: 0.4319Epoch 00007: val_loss improved from 9.40245 to 9.31229, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 250us/step - loss: 8.8690 - acc: 0.4322 - val_loss: 9.3123 - val_acc: 0.3689
+6520/6680 [============================&gt;.] - ETA: 0s - loss: 8.3817 - acc: 0.4462Epoch 00007: val_loss improved from 9.07454 to 8.75113, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 247us/step - loss: 8.3660 - acc: 0.4469 - val_loss: 8.7511 - val_acc: 0.3940
 Epoch 8/20
-6600/6680 [============================&gt;.] - ETA: 0s - loss: 8.7767 - acc: 0.4403Epoch 00008: val_loss improved from 9.31229 to 9.22831, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 246us/step - loss: 8.7804 - acc: 0.4401 - val_loss: 9.2283 - val_acc: 0.3796
+6520/6680 [============================&gt;.] - ETA: 0s - loss: 8.2054 - acc: 0.4676Epoch 00008: val_loss improved from 8.75113 to 8.73920, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 248us/step - loss: 8.1919 - acc: 0.4684 - val_loss: 8.7392 - val_acc: 0.3916
 Epoch 9/20
-6460/6680 [============================&gt;.] - ETA: 0s - loss: 8.7336 - acc: 0.4472Epoch 00009: val_loss improved from 9.22831 to 9.18097, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 249us/step - loss: 8.7423 - acc: 0.4466 - val_loss: 9.1810 - val_acc: 0.3832
+6580/6680 [============================&gt;.] - ETA: 0s - loss: 8.1483 - acc: 0.4764Epoch 00009: val_loss did not improve
+6680/6680 [==============================] - 2s 250us/step - loss: 8.1376 - acc: 0.4771 - val_loss: 8.7697 - val_acc: 0.3916
 Epoch 10/20
-6520/6680 [============================&gt;.] - ETA: 0s - loss: 8.7246 - acc: 0.4492Epoch 00010: val_loss improved from 9.18097 to 9.15849, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 247us/step - loss: 8.7089 - acc: 0.4504 - val_loss: 9.1585 - val_acc: 0.3737
+6540/6680 [============================&gt;.] - ETA: 0s - loss: 8.0216 - acc: 0.4835Epoch 00010: val_loss improved from 8.73920 to 8.64850, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 250us/step - loss: 8.0303 - acc: 0.4826 - val_loss: 8.6485 - val_acc: 0.3928
 Epoch 11/20
-6460/6680 [============================&gt;.] - ETA: 0s - loss: 8.5567 - acc: 0.4492Epoch 00011: val_loss improved from 9.15849 to 8.82648, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 249us/step - loss: 8.5329 - acc: 0.4509 - val_loss: 8.8265 - val_acc: 0.3820
+6500/6680 [============================&gt;.] - ETA: 0s - loss: 7.9033 - acc: 0.4942Epoch 00011: val_loss improved from 8.64850 to 8.59096, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 248us/step - loss: 7.9199 - acc: 0.4930 - val_loss: 8.5910 - val_acc: 0.4048
 Epoch 12/20
-6480/6680 [============================&gt;.] - ETA: 0s - loss: 8.2781 - acc: 0.4622Epoch 00012: val_loss improved from 8.82648 to 8.70089, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 248us/step - loss: 8.2603 - acc: 0.4635 - val_loss: 8.7009 - val_acc: 0.4036
+6520/6680 [============================&gt;.] - ETA: 0s - loss: 7.8950 - acc: 0.4980Epoch 00012: val_loss improved from 8.59096 to 8.51670, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 248us/step - loss: 7.8840 - acc: 0.4987 - val_loss: 8.5167 - val_acc: 0.4120
 Epoch 13/20
-6560/6680 [============================&gt;.] - ETA: 0s - loss: 8.1567 - acc: 0.4780Epoch 00013: val_loss improved from 8.70089 to 8.63256, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 247us/step - loss: 8.1577 - acc: 0.4780 - val_loss: 8.6326 - val_acc: 0.4132
+6660/6680 [============================&gt;.] - ETA: 0s - loss: 7.7399 - acc: 0.5033Epoch 00013: val_loss improved from 8.51670 to 8.41347, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 249us/step - loss: 7.7361 - acc: 0.5036 - val_loss: 8.4135 - val_acc: 0.4024
 Epoch 14/20
-6600/6680 [============================&gt;.] - ETA: 0s - loss: 8.1194 - acc: 0.4858Epoch 00014: val_loss improved from 8.63256 to 8.61816, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 246us/step - loss: 8.1260 - acc: 0.4855 - val_loss: 8.6182 - val_acc: 0.4156
+6660/6680 [============================&gt;.] - ETA: 0s - loss: 7.6131 - acc: 0.5149Epoch 00014: val_loss improved from 8.41347 to 8.28342, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 249us/step - loss: 7.6121 - acc: 0.5150 - val_loss: 8.2834 - val_acc: 0.4228
 Epoch 15/20
-6520/6680 [============================&gt;.] - ETA: 0s - loss: 8.1067 - acc: 0.4900Epoch 00015: val_loss did not improve
-6680/6680 [==============================] - 2s 246us/step - loss: 8.1037 - acc: 0.4901 - val_loss: 8.6458 - val_acc: 0.4108
+6500/6680 [============================&gt;.] - ETA: 0s - loss: 7.5627 - acc: 0.5203Epoch 00015: val_loss improved from 8.28342 to 8.25592, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 248us/step - loss: 7.5535 - acc: 0.5208 - val_loss: 8.2559 - val_acc: 0.4120
 Epoch 16/20
-6460/6680 [============================&gt;.] - ETA: 0s - loss: 8.1047 - acc: 0.4909Epoch 00016: val_loss did not improve
-6680/6680 [==============================] - 2s 247us/step - loss: 8.0853 - acc: 0.4921 - val_loss: 8.6479 - val_acc: 0.4096
+6540/6680 [============================&gt;.] - ETA: 0s - loss: 7.5053 - acc: 0.5261Epoch 00016: val_loss improved from 8.25592 to 8.23826, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 248us/step - loss: 7.5244 - acc: 0.5250 - val_loss: 8.2383 - val_acc: 0.4192
 Epoch 17/20
-6460/6680 [============================&gt;.] - ETA: 0s - loss: 8.0428 - acc: 0.4943Epoch 00017: val_loss did not improve
-6680/6680 [==============================] - 2s 247us/step - loss: 8.0483 - acc: 0.4939 - val_loss: 8.6315 - val_acc: 0.4132
+6580/6680 [============================&gt;.] - ETA: 0s - loss: 7.5152 - acc: 0.5271Epoch 00017: val_loss improved from 8.23826 to 8.18384, saving model to saved_models/weights.best.VGG16.hdf5
+6680/6680 [==============================] - 2s 250us/step - loss: 7.5067 - acc: 0.5275 - val_loss: 8.1838 - val_acc: 0.4371
 Epoch 18/20
-6540/6680 [============================&gt;.] - ETA: 0s - loss: 8.0256 - acc: 0.4982Epoch 00018: val_loss did not improve
-6680/6680 [==============================] - 2s 245us/step - loss: 8.0219 - acc: 0.4982 - val_loss: 8.6405 - val_acc: 0.4048
+6440/6680 [===========================&gt;..] - ETA: 0s - loss: 7.4900 - acc: 0.5295Epoch 00018: val_loss did not improve
+6680/6680 [==============================] - 2s 248us/step - loss: 7.4925 - acc: 0.5293 - val_loss: 8.2924 - val_acc: 0.4263
 Epoch 19/20
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 7.9491 - acc: 0.4967Epoch 00019: val_loss improved from 8.61816 to 8.60597, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 244us/step - loss: 7.9519 - acc: 0.4966 - val_loss: 8.6060 - val_acc: 0.3964
+6440/6680 [===========================&gt;..] - ETA: 0s - loss: 7.4959 - acc: 0.5307Epoch 00019: val_loss did not improve
+6680/6680 [==============================] - 2s 247us/step - loss: 7.4873 - acc: 0.5314 - val_loss: 8.2468 - val_acc: 0.4287
 Epoch 20/20
-6620/6680 [============================&gt;.] - ETA: 0s - loss: 7.8585 - acc: 0.5021Epoch 00020: val_loss improved from 8.60597 to 8.54579, saving model to saved_models/weights.best.VGG16.hdf5
-6680/6680 [==============================] - 2s 244us/step - loss: 7.8600 - acc: 0.5021 - val_loss: 8.5458 - val_acc: 0.4132
+6600/6680 [============================&gt;.] - ETA: 0s - loss: 7.4398 - acc: 0.5303Epoch 00020: val_loss did not improve
+6680/6680 [==============================] - 2s 248us/step - loss: 7.4494 - acc: 0.5298 - val_loss: 8.2702 - val_acc: 0.4180
 </pre>
 </div>
 </div>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[53]:</div>
+<div class="prompt output_prompt">Out[22]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;keras.callbacks.History at 0x7f3ded539be0&gt;</pre>
+<pre>&lt;keras.callbacks.History at 0x7f3cd1d60080&gt;</pre>
 </div>
 
 </div>
@@ -12948,7 +12966,7 @@ Epoch 20/20
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## 加载具有最好验证loss的模型</span>
@@ -12972,7 +12990,7 @@ Epoch 20/20
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 获取测试数据集中每一个图像所预测的狗品种的index</span>
@@ -12997,7 +13015,7 @@ Epoch 20/20
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Test accuracy: 41.8660%
+<pre>Test accuracy: 42.4641%
 </pre>
 </div>
 </div>
@@ -13016,7 +13034,7 @@ Epoch 20/20
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">extract_bottleneck_features</span> <span class="k">import</span> <span class="o">*</span>
@@ -13067,7 +13085,7 @@ test_{network} = bottleneck_features['test']</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### TODO: 从另一个预训练的CNN获取bottleneck特征</span>
@@ -13095,13 +13113,16 @@ test_{network} = bottleneck_features['test']</code></pre>
 <p><a id='question6'></a></p>
 <h3 id="&#38382;&#39064;-6:"><strong>&#38382;&#39064; 6:</strong><a class="anchor-link" href="#&#38382;&#39064;-6:">&#182;</a></h3><p>在下方的代码块中尝试使用 Keras 搭建最终的网络架构，并回答你实现最终 CNN 架构的步骤与每一步的作用，并描述你在迁移学习过程中，使用该网络架构的原因。</p>
 <p><strong>回答:</strong></p>
+<ol>
+<li>选择Inception V3的原因是因为权重小于VGG和ResNet，这意味着它占用较低内存。</li>
+</ol>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### TODO: 定义你的框架</span>
@@ -13159,7 +13180,7 @@ _________________________________________________________________
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### TODO: 编译模型</span>
@@ -13175,15 +13196,6 @@ _________________________________________________________________
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>回答：使用V3的原因是他比VGG跟ResNet都小</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <hr>
 <h3 id="&#12304;&#32451;&#20064;&#12305;&#35757;&#32451;&#27169;&#22411;">&#12304;&#32451;&#20064;&#12305;&#35757;&#32451;&#27169;&#22411;<a class="anchor-link" href="#&#12304;&#32451;&#20064;&#12305;&#35757;&#32451;&#27169;&#22411;">&#182;</a></h3><p><a id='question7'></a></p>
 <h3 id="&#38382;&#39064;-7:"><strong>&#38382;&#39064; 7:</strong><a class="anchor-link" href="#&#38382;&#39064;-7:">&#182;</a></h3><p>在下方代码单元中训练你的模型。使用模型检查点（model checkpointing）来储存具有最低验证集 loss 的模型。</p>
@@ -13194,7 +13206,7 @@ _________________________________________________________________
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### TODO: 训练模型</span>
@@ -13222,78 +13234,78 @@ _________________________________________________________________
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Train on 6680 samples, validate on 835 samples
 Epoch 1/20
-6520/6680 [============================&gt;.] - ETA: 0s - loss: 1.2317 - acc: 0.7566Epoch 00001: val_loss improved from inf to 1.04415, saving model to saved_models/weights.best.InceptionV3.hdf5
-6680/6680 [==============================] - 2s 371us/step - loss: 1.2307 - acc: 0.7566 - val_loss: 1.0441 - val_acc: 0.8204
+6560/6680 [============================&gt;.] - ETA: 0s - loss: 3.3669 - acc: 0.4261Epoch 00001: val_loss improved from inf to 1.49052, saving model to saved_models/weights.best.InceptionV3.hdf5
+6680/6680 [==============================] - 3s 462us/step - loss: 3.3426 - acc: 0.4292 - val_loss: 1.4905 - val_acc: 0.7701
 Epoch 2/20
-6620/6680 [============================&gt;.] - ETA: 0s - loss: 1.2500 - acc: 0.7492Epoch 00002: val_loss did not improve
-6680/6680 [==============================] - 2s 370us/step - loss: 1.2498 - acc: 0.7493 - val_loss: 1.0541 - val_acc: 0.7964
+6560/6680 [============================&gt;.] - ETA: 0s - loss: 1.8190 - acc: 0.6777Epoch 00002: val_loss improved from 1.49052 to 1.22728, saving model to saved_models/weights.best.InceptionV3.hdf5
+6680/6680 [==============================] - 2s 364us/step - loss: 1.8148 - acc: 0.6783 - val_loss: 1.2273 - val_acc: 0.7904
 Epoch 3/20
-6560/6680 [============================&gt;.] - ETA: 0s - loss: 1.2362 - acc: 0.7556Epoch 00003: val_loss improved from 1.04415 to 1.03304, saving model to saved_models/weights.best.InceptionV3.hdf5
-6680/6680 [==============================] - 2s 369us/step - loss: 1.2338 - acc: 0.7564 - val_loss: 1.0330 - val_acc: 0.8204
+6540/6680 [============================&gt;.] - ETA: 0s - loss: 1.5357 - acc: 0.7066Epoch 00003: val_loss improved from 1.22728 to 1.16575, saving model to saved_models/weights.best.InceptionV3.hdf5
+6680/6680 [==============================] - 2s 367us/step - loss: 1.5372 - acc: 0.7073 - val_loss: 1.1658 - val_acc: 0.7952
 Epoch 4/20
-6540/6680 [============================&gt;.] - ETA: 0s - loss: 1.2444 - acc: 0.7549Epoch 00004: val_loss improved from 1.03304 to 0.93184, saving model to saved_models/weights.best.InceptionV3.hdf5
-6680/6680 [==============================] - 2s 371us/step - loss: 1.2465 - acc: 0.7537 - val_loss: 0.9318 - val_acc: 0.8323
+6640/6680 [============================&gt;.] - ETA: 0s - loss: 1.3906 - acc: 0.7351Epoch 00004: val_loss improved from 1.16575 to 1.02892, saving model to saved_models/weights.best.InceptionV3.hdf5
+6680/6680 [==============================] - 2s 374us/step - loss: 1.3913 - acc: 0.7349 - val_loss: 1.0289 - val_acc: 0.8347
 Epoch 5/20
-6580/6680 [============================&gt;.] - ETA: 0s - loss: 1.2410 - acc: 0.7498Epoch 00005: val_loss did not improve
-6680/6680 [==============================] - 2s 361us/step - loss: 1.2410 - acc: 0.7501 - val_loss: 1.0222 - val_acc: 0.8072
+6560/6680 [============================&gt;.] - ETA: 0s - loss: 1.3279 - acc: 0.7354Epoch 00005: val_loss improved from 1.02892 to 0.98653, saving model to saved_models/weights.best.InceptionV3.hdf5
+6680/6680 [==============================] - 2s 360us/step - loss: 1.3285 - acc: 0.7347 - val_loss: 0.9865 - val_acc: 0.8335
 Epoch 6/20
-6600/6680 [============================&gt;.] - ETA: 0s - loss: 1.2463 - acc: 0.7503Epoch 00006: val_loss did not improve
-6680/6680 [==============================] - 2s 351us/step - loss: 1.2494 - acc: 0.7497 - val_loss: 1.0269 - val_acc: 0.8036
+6580/6680 [============================&gt;.] - ETA: 0s - loss: 1.2739 - acc: 0.7442Epoch 00006: val_loss improved from 0.98653 to 0.98047, saving model to saved_models/weights.best.InceptionV3.hdf5
+6680/6680 [==============================] - 2s 360us/step - loss: 1.2763 - acc: 0.7430 - val_loss: 0.9805 - val_acc: 0.8443
 Epoch 7/20
-6600/6680 [============================&gt;.] - ETA: 0s - loss: 1.2370 - acc: 0.7561Epoch 00007: val_loss did not improve
-6680/6680 [==============================] - 2s 354us/step - loss: 1.2367 - acc: 0.7567 - val_loss: 0.9966 - val_acc: 0.8359
+6600/6680 [============================&gt;.] - ETA: 0s - loss: 1.2529 - acc: 0.7436Epoch 00007: val_loss did not improve
+6680/6680 [==============================] - 2s 348us/step - loss: 1.2532 - acc: 0.7439 - val_loss: 0.9889 - val_acc: 0.8263
 Epoch 8/20
-6580/6680 [============================&gt;.] - ETA: 0s - loss: 1.2439 - acc: 0.7541Epoch 00008: val_loss did not improve
-6680/6680 [==============================] - 2s 362us/step - loss: 1.2479 - acc: 0.7539 - val_loss: 1.0229 - val_acc: 0.8132
+6580/6680 [============================&gt;.] - ETA: 0s - loss: 1.2543 - acc: 0.7514Epoch 00008: val_loss did not improve
+6680/6680 [==============================] - 2s 347us/step - loss: 1.2559 - acc: 0.7512 - val_loss: 1.0057 - val_acc: 0.8287
 Epoch 9/20
-6580/6680 [============================&gt;.] - ETA: 0s - loss: 1.2587 - acc: 0.7544Epoch 00009: val_loss did not improve
-6680/6680 [==============================] - 2s 361us/step - loss: 1.2585 - acc: 0.7551 - val_loss: 1.0120 - val_acc: 0.8204
+6580/6680 [============================&gt;.] - ETA: 0s - loss: 1.2140 - acc: 0.7544Epoch 00009: val_loss did not improve
+6680/6680 [==============================] - 2s 347us/step - loss: 1.2138 - acc: 0.7549 - val_loss: 0.9925 - val_acc: 0.8096
 Epoch 10/20
-6580/6680 [============================&gt;.] - ETA: 0s - loss: 1.2339 - acc: 0.7608Epoch 00010: val_loss did not improve
-6680/6680 [==============================] - 2s 363us/step - loss: 1.2321 - acc: 0.7606 - val_loss: 1.0461 - val_acc: 0.8036
+6580/6680 [============================&gt;.] - ETA: 0s - loss: 1.2247 - acc: 0.7544Epoch 00010: val_loss did not improve
+6680/6680 [==============================] - 2s 348us/step - loss: 1.2261 - acc: 0.7533 - val_loss: 1.0051 - val_acc: 0.8204
 Epoch 11/20
-6560/6680 [============================&gt;.] - ETA: 0s - loss: 1.2474 - acc: 0.7471Epoch 00011: val_loss did not improve
-6680/6680 [==============================] - 2s 365us/step - loss: 1.2510 - acc: 0.7463 - val_loss: 1.0817 - val_acc: 0.8036
+6580/6680 [============================&gt;.] - ETA: 0s - loss: 1.2247 - acc: 0.7506Epoch 00011: val_loss did not improve
+6680/6680 [==============================] - 2s 348us/step - loss: 1.2239 - acc: 0.7518 - val_loss: 1.0401 - val_acc: 0.8000
 Epoch 12/20
-6640/6680 [============================&gt;.] - ETA: 0s - loss: 1.2653 - acc: 0.7495Epoch 00012: val_loss did not improve
-6680/6680 [==============================] - 2s 374us/step - loss: 1.2628 - acc: 0.7497 - val_loss: 1.0205 - val_acc: 0.8359
+6580/6680 [============================&gt;.] - ETA: 0s - loss: 1.2168 - acc: 0.7514Epoch 00012: val_loss improved from 0.98047 to 0.97817, saving model to saved_models/weights.best.InceptionV3.hdf5
+6680/6680 [==============================] - 2s 350us/step - loss: 1.2146 - acc: 0.7518 - val_loss: 0.9782 - val_acc: 0.8275
 Epoch 13/20
-6520/6680 [============================&gt;.] - ETA: 0s - loss: 1.2521 - acc: 0.7561Epoch 00013: val_loss did not improve
-6680/6680 [==============================] - 2s 368us/step - loss: 1.2502 - acc: 0.7570 - val_loss: 1.2039 - val_acc: 0.7880
+6560/6680 [============================&gt;.] - ETA: 0s - loss: 1.2367 - acc: 0.7529Epoch 00013: val_loss did not improve
+6680/6680 [==============================] - 2s 364us/step - loss: 1.2362 - acc: 0.7533 - val_loss: 1.0145 - val_acc: 0.8096
 Epoch 14/20
-6600/6680 [============================&gt;.] - ETA: 0s - loss: 1.2585 - acc: 0.7588Epoch 00014: val_loss did not improve
-6680/6680 [==============================] - 2s 361us/step - loss: 1.2565 - acc: 0.7582 - val_loss: 1.0170 - val_acc: 0.8275
+6580/6680 [============================&gt;.] - ETA: 0s - loss: 1.2222 - acc: 0.7540Epoch 00014: val_loss did not improve
+6680/6680 [==============================] - 2s 366us/step - loss: 1.2261 - acc: 0.7537 - val_loss: 0.9818 - val_acc: 0.8156
 Epoch 15/20
-6560/6680 [============================&gt;.] - ETA: 0s - loss: 1.2896 - acc: 0.7465Epoch 00015: val_loss did not improve
-6680/6680 [==============================] - 2s 366us/step - loss: 1.2929 - acc: 0.7460 - val_loss: 0.9871 - val_acc: 0.8287
+6560/6680 [============================&gt;.] - ETA: 0s - loss: 1.2568 - acc: 0.7500Epoch 00015: val_loss did not improve
+6680/6680 [==============================] - 2s 368us/step - loss: 1.2520 - acc: 0.7506 - val_loss: 1.0407 - val_acc: 0.8156
 Epoch 16/20
-6640/6680 [============================&gt;.] - ETA: 0s - loss: 1.2605 - acc: 0.7584Epoch 00016: val_loss did not improve
-6680/6680 [==============================] - 2s 371us/step - loss: 1.2634 - acc: 0.7579 - val_loss: 1.0024 - val_acc: 0.8419
+6520/6680 [============================&gt;.] - ETA: 0s - loss: 1.2428 - acc: 0.7535Epoch 00016: val_loss did not improve
+6680/6680 [==============================] - 2s 366us/step - loss: 1.2443 - acc: 0.7525 - val_loss: 1.0574 - val_acc: 0.8084
 Epoch 17/20
-6560/6680 [============================&gt;.] - ETA: 0s - loss: 1.2526 - acc: 0.7584Epoch 00017: val_loss did not improve
-6680/6680 [==============================] - 2s 369us/step - loss: 1.2524 - acc: 0.7591 - val_loss: 1.0294 - val_acc: 0.8335
+6560/6680 [============================&gt;.] - ETA: 0s - loss: 1.2200 - acc: 0.7601Epoch 00017: val_loss did not improve
+6680/6680 [==============================] - 2s 370us/step - loss: 1.2263 - acc: 0.7590 - val_loss: 1.0388 - val_acc: 0.8168
 Epoch 18/20
-6660/6680 [============================&gt;.] - ETA: 0s - loss: 1.2747 - acc: 0.7544Epoch 00018: val_loss did not improve
-6680/6680 [==============================] - 2s 373us/step - loss: 1.2758 - acc: 0.7545 - val_loss: 0.9850 - val_acc: 0.8228
+6580/6680 [============================&gt;.] - ETA: 0s - loss: 1.2411 - acc: 0.7514Epoch 00018: val_loss did not improve
+6680/6680 [==============================] - 2s 364us/step - loss: 1.2400 - acc: 0.7507 - val_loss: 1.0510 - val_acc: 0.8323
 Epoch 19/20
-6520/6680 [============================&gt;.] - ETA: 0s - loss: 1.2739 - acc: 0.7557Epoch 00019: val_loss did not improve
-6680/6680 [==============================] - 2s 373us/step - loss: 1.2739 - acc: 0.7561 - val_loss: 1.0536 - val_acc: 0.8299
+6540/6680 [============================&gt;.] - ETA: 0s - loss: 1.2308 - acc: 0.7589Epoch 00019: val_loss did not improve
+6680/6680 [==============================] - 2s 367us/step - loss: 1.2284 - acc: 0.7591 - val_loss: 1.0039 - val_acc: 0.8180
 Epoch 20/20
-6520/6680 [============================&gt;.] - ETA: 0s - loss: 1.2934 - acc: 0.7443Epoch 00020: val_loss did not improve
-6680/6680 [==============================] - 2s 373us/step - loss: 1.2932 - acc: 0.7439 - val_loss: 1.0166 - val_acc: 0.8228
+6540/6680 [============================&gt;.] - ETA: 0s - loss: 1.2236 - acc: 0.7624Epoch 00020: val_loss did not improve
+6680/6680 [==============================] - 2s 366us/step - loss: 1.2247 - acc: 0.7632 - val_loss: 1.0147 - val_acc: 0.8204
 </pre>
 </div>
 </div>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[65]:</div>
+<div class="prompt output_prompt">Out[29]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;keras.callbacks.History at 0x7f3d87bc3f98&gt;</pre>
+<pre>&lt;keras.callbacks.History at 0x7f3cd1a8d710&gt;</pre>
 </div>
 
 </div>
@@ -13304,7 +13316,7 @@ Epoch 20/20
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### TODO: 加载具有最佳验证loss的模型权重</span>
@@ -13342,7 +13354,7 @@ Epoch 20/20
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">InceptionV3_predictions</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">InceptionV3_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">feature</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)))</span> <span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="n">test_InceptionV3</span><span class="p">]</span>
@@ -13366,7 +13378,7 @@ Epoch 20/20
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Test accuracy: 78.8278%
+<pre>Test accuracy: 79.5455%
 </pre>
 </div>
 </div>
@@ -13396,7 +13408,7 @@ Epoch 20/20
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### TODO: 写一个函数，该函数将图像的路径作为输入</span>
@@ -13441,7 +13453,7 @@ Epoch 20/20
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### TODO: 设计你的算法</span>
@@ -13456,12 +13468,12 @@ Epoch 20/20
     
     <span class="k">if</span><span class="p">(</span><span class="n">dog_detector</span><span class="p">(</span><span class="n">path</span><span class="p">)):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dog&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The bread of dog is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">breeds</span><span class="p">))</span>
     <span class="k">elif</span><span class="p">(</span><span class="n">face_detector</span><span class="p">(</span><span class="n">path</span><span class="p">)):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Human&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;human look like the bread of dog is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">breeds</span><span class="p">))</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Not Human or Dog&#39;</span><span class="p">)</span>
-    
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dog bread is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">breeds</span><span class="p">))</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 </pre></div>
 
@@ -13499,14 +13511,13 @@ Epoch 20/20
 <li>调整参数和改变优化器</li>
 <li>增强训练图像的质量</li>
 </ol>
-<p>BTW: 直接用的Udacity提供的继承jupyter,无法上传自己的照片，所以只提供了一个人类照片，在本地已经测试了几张人类照片。</p>
-
+<h2 id="BTW:-&#30452;&#25509;&#29992;&#30340;Udacity-Workspace&#25552;&#20379;&#30340;jupyter,&#26080;&#27861;&#19978;&#20256;&#33258;&#24049;&#30340;&#29031;&#29255;&#65292;&#25152;&#20197;&#21482;&#25552;&#20379;&#20102;&#19968;&#20010;&#20154;&#31867;&#29031;&#29255;&#65292;&#22312;&#26412;&#22320;&#24050;&#32463;&#27979;&#35797;&#20102;&#20960;&#24352;&#20154;&#31867;&#29031;&#29255;&#12290;">BTW: &#30452;&#25509;&#29992;&#30340;Udacity Workspace&#25552;&#20379;&#30340;jupyter,&#26080;&#27861;&#19978;&#20256;&#33258;&#24049;&#30340;&#29031;&#29255;&#65292;&#25152;&#20197;&#21482;&#25552;&#20379;&#20102;&#19968;&#20010;&#20154;&#31867;&#29031;&#29255;&#65292;&#22312;&#26412;&#22320;&#24050;&#32463;&#27979;&#35797;&#20102;&#20960;&#24352;&#20154;&#31867;&#29031;&#29255;&#12290;<a class="anchor-link" href="#BTW:-&#30452;&#25509;&#29992;&#30340;Udacity-Workspace&#25552;&#20379;&#30340;jupyter,&#26080;&#27861;&#19978;&#20256;&#33258;&#24049;&#30340;&#29031;&#29255;&#65292;&#25152;&#20197;&#21482;&#25552;&#20379;&#20102;&#19968;&#20010;&#20154;&#31867;&#29031;&#29255;&#65292;&#22312;&#26412;&#22320;&#24050;&#32463;&#27979;&#35797;&#20102;&#20960;&#24352;&#20154;&#31867;&#29031;&#29255;&#12290;">&#182;</a></h2><h2 id="Review&#32473;&#20986;&#30340;&#19978;&#20256;upload&#27809;&#26377;&#25214;&#21040;-&#22312;jupyter&#37324;">Review&#32473;&#20986;&#30340;&#19978;&#20256;upload&#27809;&#26377;&#25214;&#21040; &#22312;jupyter&#37324;<a class="anchor-link" href="#Review&#32473;&#20986;&#30340;&#19978;&#20256;upload&#27809;&#26377;&#25214;&#21040;-&#22312;jupyter&#37324;">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## TODO: 在你的电脑上，在步骤6中，至少在6张图片上运行你的算法。</span>
@@ -13528,10 +13539,8 @@ Epoch 20/20
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Downloading data from https://github.com/fchollet/deep-learning-models/releases/download/v0.5/inception_v3_weights_tf_dim_ordering_tf_kernels_notop.h5
-87916544/87910968 [==============================] - 5s 0us/step
-Human
-Dog bread is in/005.Alaskan_malamute
+<pre>Human
+human look like the bread of dog is in/045.Cardigan_welsh_corgi
 </pre>
 </div>
 </div>
@@ -13557,7 +13566,7 @@ Dog bread is in/005.Alaskan_malamute
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">predictor</span><span class="p">(</span><span class="s1">&#39;images/Labrador_retriever_06457.jpg&#39;</span><span class="p">)</span>
@@ -13578,7 +13587,7 @@ Dog bread is in/005.Alaskan_malamute
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Dog
-Dog bread is in/096.Labrador_retriever
+The bread of dog is in/096.Labrador_retriever
 </pre>
 </div>
 </div>
