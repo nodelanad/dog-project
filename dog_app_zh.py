@@ -60,7 +60,7 @@
 # - `train_targets`, `valid_targets`, `test_targets` - 包含独热编码分类标签的numpy数组
 # - `dog_names` - 由字符串构成的与标签相对应的狗的种类
 
-# In[1]:
+# In[4]:
 
 
 from sklearn.datasets import load_files       
@@ -95,7 +95,7 @@ print('There are %d test dog images.'% len(test_files))
 # 
 # 在下方的代码单元中，我们导入人脸图像数据集，文件所在路径存储在名为 `human_files` 的 numpy 数组。
 
-# In[2]:
+# In[5]:
 
 
 import random
@@ -117,7 +117,7 @@ print('There are %d total human images.' % len(human_files))
 # 
 # 在如下代码单元中，我们将演示如何使用这个检测模型在样本图像中找到人脸。
 
-# In[3]:
+# In[6]:
 
 
 import cv2                
@@ -160,7 +160,7 @@ plt.show()
 # 
 # 我们可以将这个程序封装为一个函数。该函数的输入为人脸图像的**路径**，当图像中包含人脸时，该函数返回 `True`，反之返回 `False`。该函数定义如下所示。
 
-# In[4]:
+# In[7]:
 
 
 # 如果img_path路径表示的图像检测到了脸，返回"True" 
@@ -186,7 +186,7 @@ def face_detector(img_path):
 # 
 # 理想情况下，人图像中检测到人脸的概率应当为100%，而狗图像中检测到人脸的概率应该为0%。你会发现我们的算法并非完美，但结果仍然是可以接受的。我们从每个数据集中提取前100个图像的文件路径，并将它们存储在`human_files_short`和`dog_files_short`中。
 
-# In[5]:
+# In[8]:
 
 
 human_files_short = human_files[:100]
@@ -249,7 +249,7 @@ print("%s %% in dog_files " % human_inDogs)
 # 
 # ImageNet 这目前一个非常流行的数据集，常被用来测试图像分类等计算机视觉任务相关的算法。它包含超过一千万个 URL，每一个都链接到 [1000 categories](https://gist.github.com/yrevar/942d3a0ac09ec9e5eb3a) 中所对应的一个物体的图像。任给输入一个图像，该 ResNet-50 模型会返回一个对图像中物体的预测结果。
 
-# In[8]:
+# In[9]:
 
 
 from keras.applications.resnet50 import ResNet50
@@ -271,7 +271,7 @@ ResNet50_model = ResNet50(weights='imagenet')
 # 
 # - `paths_to_tensor` 函数将图像路径的字符串组成的 numpy 数组作为输入，并返回一个4维张量，各维度尺寸为 `(nb_samples, 224, 224, 3)`。 在这里，`nb_samples`是提供的图像路径的数据中的样本数量或图像数量。你也可以将 `nb_samples` 理解为数据集中3维张量的个数（每个3维张量表示一个不同的图像。
 
-# In[9]:
+# In[10]:
 
 
 from keras.preprocessing import image                  
@@ -304,7 +304,7 @@ def paths_to_tensor(img_paths):
 # 通过对预测出的向量取用 argmax 函数（找到有最大概率值的下标序号），我们可以得到一个整数，即模型预测到的物体的类别。进而根据这个 [清单](https://gist.github.com/yrevar/942d3a0ac09ec9e5eb3a)，我们能够知道这具体是哪个品种的狗狗。
 # 
 
-# In[10]:
+# In[11]:
 
 
 from keras.applications.resnet50 import preprocess_input, decode_predictions
@@ -321,7 +321,7 @@ def ResNet50_predict_labels(img_path):
 # 
 # 我们通过这些想法来完成下方的 `dog_detector` 函数，如果从图像中检测到狗就返回 `True`，否则返回 `False`。
 
-# In[11]:
+# In[12]:
 
 
 def dog_detector(img_path):
@@ -341,7 +341,7 @@ def dog_detector(img_path):
 # - `human_files_short`中图像检测到狗狗的百分比？
 # - `dog_files_short`中图像检测到狗狗的百分比？
 
-# In[12]:
+# In[13]:
 
 
 ### TODO: 测试dog_detector函数在human_files_short和dog_files_short的表现
@@ -401,7 +401,7 @@ print("%s %% in human_files_short" % dog_inDogs)
 # 
 # 通过对每张图像的像素值除以255，我们对图像实现了归一化处理。
 
-# In[13]:
+# In[14]:
 
 
 from PIL import ImageFile                            
@@ -440,7 +440,7 @@ test_tensors = paths_to_tensor(test_files).astype('float32')/255
 # 4. 用Flatten层将三维数据压缩成一维数据，用于卷积层和全连接层之间的连接
 # 5. 因为是多分类问题，所以最后一层基于"softmax"建立133种狗类的输出
 
-# In[14]:
+# In[15]:
 
 
 from keras.layers import Conv2D, MaxPooling2D, GlobalAveragePooling2D
@@ -464,7 +464,7 @@ model.add(Dense(133, activation='softmax'))
 model.summary()
 
 
-# In[15]:
+# In[16]:
 
 
 ## 编译模型
@@ -488,7 +488,7 @@ model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['ac
 # 
 # 
 
-# In[16]:
+# In[17]:
 
 
 from keras.callbacks import ModelCheckpoint  
@@ -507,7 +507,7 @@ model.fit(train_tensors, train_targets,
           epochs=epochs, batch_size=20, callbacks=[checkpointer], verbose=1)
 
 
-# In[17]:
+# In[18]:
 
 
 ## 加载具有最好验证loss的模型
@@ -519,7 +519,7 @@ model.load_weights('saved_models/weights.best.from_scratch.hdf5')
 # 
 # 在狗图像的测试数据集上试用你的模型。确保测试准确率大于1%。
 
-# In[18]:
+# In[19]:
 
 
 # 获取测试数据集中每一个图像所预测的狗品种的index
@@ -540,7 +540,7 @@ print('Test accuracy: %.4f%%' % test_accuracy)
 
 # ### 得到从图像中提取的特征向量（Bottleneck Features）
 
-# In[19]:
+# In[20]:
 
 
 bottleneck_features = np.load('/data/bottleneck_features/DogVGG16Data.npz')
@@ -553,7 +553,7 @@ test_VGG16 = bottleneck_features['test']
 # 
 # 该模型使用预训练的 VGG-16 模型作为固定的图像特征提取器，其中 VGG-16 最后一层卷积层的输出被直接输入到我们的模型。我们只需要添加一个全局平均池化层以及一个全连接层，其中全连接层使用 softmax 激活函数，对每一个狗的种类都包含一个节点。
 
-# In[20]:
+# In[21]:
 
 
 VGG16_model = Sequential()
@@ -563,7 +563,7 @@ VGG16_model.add(Dense(133, activation='softmax'))
 VGG16_model.summary()
 
 
-# In[21]:
+# In[22]:
 
 
 ## 编译模型
@@ -571,7 +571,7 @@ VGG16_model.summary()
 VGG16_model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
 
 
-# In[22]:
+# In[23]:
 
 
 ## 训练模型
@@ -585,7 +585,7 @@ VGG16_model.fit(train_VGG16, train_targets,
 
 
 
-# In[23]:
+# In[24]:
 
 
 ## 加载具有最好验证loss的模型
@@ -596,7 +596,7 @@ VGG16_model.load_weights('saved_models/weights.best.VGG16.hdf5')
 # ### 测试模型
 # 现在，我们可以测试此CNN在狗图像测试数据集中识别品种的效果如何。我们在下方打印出测试准确率。
 
-# In[24]:
+# In[25]:
 
 
 # 获取测试数据集中每一个图像所预测的狗品种的index
@@ -609,7 +609,7 @@ print('Test accuracy: %.4f%%' % test_accuracy)
 
 # ### 使用模型预测狗的品种
 
-# In[25]:
+# In[26]:
 
 
 from extract_bottleneck_features import *
@@ -652,7 +652,7 @@ def VGG16_predict_breed(img_path):
 #     valid_{network} = bottleneck_features['valid']
 #     test_{network} = bottleneck_features['test']
 
-# In[26]:
+# In[27]:
 
 
 ### TODO: 从另一个预训练的CNN获取bottleneck特征
@@ -680,10 +680,13 @@ test_InceptionV3 = bottleneck_features['test']
 # 
 # __回答:__ 
 # 1. 选择Inception V3的原因是因为权重小于VGG和ResNet，这意味着它占用较低内存。
+# 2. 迁移学习模型数据常通过全局平均池化进行降维处理，便于快速训练模型
+# 3. 多分类问题常用softmax激活函数处理
+# 4. 迁移模型的准确率远远高于之前搭建的CNN模型，原因在于这些迁移模型的模型复杂度远远高于之前CNN模型的复杂度，同时迁移模型的参数是经过大量数据训练出来的，因此迁移模型的准确率远远高于之前搭建的CNN模型。
 # 
 # 
 
-# In[27]:
+# In[28]:
 
 
 ### TODO: 定义你的框架
@@ -702,7 +705,7 @@ InceptionV3_model.add(Dense(len(dog_names), activation='softmax'))
 InceptionV3_model.summary()
 
 
-# In[28]:
+# In[29]:
 
 
 ### TODO: 编译模型
@@ -722,7 +725,7 @@ InceptionV3_model.compile(loss='categorical_crossentropy', optimizer='rmsprop', 
 # 当然，你也可以对训练集进行 [数据增强](https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html) 以优化模型的表现，不过这不是必须的步骤。
 # 
 
-# In[29]:
+# In[30]:
 
 
 ### TODO: 训练模型
@@ -734,7 +737,7 @@ InceptionV3_model.fit(train_InceptionV3, train_targets,
           epochs=20, batch_size=20, callbacks=[checkpointer], verbose=1)
 
 
-# In[30]:
+# In[31]:
 
 
 ### TODO: 加载具有最佳验证loss的模型权重
@@ -757,7 +760,7 @@ InceptionV3_model.load_weights('saved_models/weights.best.InceptionV3.hdf5')
 ### TODO: 在测试集上计算分类准确率
 
 
-# In[31]:
+# In[32]:
 
 
 InceptionV3_predictions = [np.argmax(InceptionV3_model.predict(np.expand_dims(feature, axis=0))) for feature in test_InceptionV3]
@@ -788,7 +791,7 @@ print('Test accuracy: %.4f%%' % test_accuracy)
 # 
 # ### __问题 9:__
 
-# In[32]:
+# In[33]:
 
 
 ### TODO: 写一个函数，该函数将图像的路径作为输入
@@ -835,7 +838,7 @@ def InceptionV3_predict_breed(img_path):
 # ---
 # 
 
-# In[47]:
+# In[43]:
 
 
 ### TODO: 设计你的算法
@@ -855,7 +858,8 @@ def predictor(path):
         print('Human')
         print('human look like the bread of dog is {}'.format(breeds))
     else:
-        raise ValueError('Not Human or Dog')
+        print('Not Human or Dog')
+
     plt.imshow(image)
 
 
@@ -883,10 +887,8 @@ def predictor(path):
 # 2. 调整参数和改变优化器
 # 3. 增强训练图像的质量
 # 
-# ## BTW: 直接用的Udacity Workspace提供的jupyter,无法上传自己的照片，所以只提供了一个人类照片，在本地已经测试了几张人类照片。
-# ## Review给出的上传upload没有找到 在jupyter里
 
-# In[48]:
+# In[35]:
 
 
 ## TODO: 在你的电脑上，在步骤6中，至少在6张图片上运行你的算法。
@@ -894,22 +896,22 @@ def predictor(path):
 predictor('images/sample_human_output.png')
 
 
-# In[49]:
+# In[38]:
 
 
-predictor('images/Labrador_retriever_06457.jpg')
+predictor('images/human1.jpg')
 
 
-# In[74]:
+# In[39]:
 
 
 predictor('images/American_water_spaniel_00648.jpg')
 
 
-# In[75]:
+# In[45]:
 
 
-predictor('images/Brittany_02625.jpg')
+predictor('images/horse.jpg')
 
 
 # In[77]:
@@ -918,10 +920,10 @@ predictor('images/Brittany_02625.jpg')
 predictor('images/Curly-coated_retriever_03896.jpg')
 
 
-# In[79]:
+# In[46]:
 
 
-predictor('images/Labrador_retriever_06455.jpg')
+predictor('images/shuilai.jpg')
 
 
 # **注意: 当你写完了所有的代码，并且回答了所有的问题。你就可以把你的 iPython Notebook 导出成 HTML 文件。你可以在菜单栏，这样导出File -> Download as -> HTML (.html)把这个 HTML 和这个 iPython notebook 一起做为你的作业提交。**
